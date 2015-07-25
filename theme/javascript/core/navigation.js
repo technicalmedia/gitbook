@@ -9,10 +9,11 @@ define([
 ], function($, URL, events, state, progress, loading, search) {
     var prev, next;
 
-    var usePushState = (typeof history.pushState !== "undefined");
+    var usePushState = false; // (typeof history.pushState !== "undefined");
 
     var handleNavigation = function(relativeUrl, push) {
         var url = URL.join(window.location.pathname, relativeUrl);
+        console.log("yo, baby :)");
         console.log("navigate to ", url, "baseurl="+relativeUrl, "current="+window.location.pathname);
 
         if (!usePushState) {
